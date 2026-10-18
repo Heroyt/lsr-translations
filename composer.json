@@ -1,0 +1,75 @@
+{
+  "name": "lsr/translations",
+  "description": "Framework-neutral native gettext localization runtime with optional Laravel integration.",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/Heroyt/lsr-translations",
+  "support": {
+    "source": "https://github.com/Heroyt/lsr-translations"
+  },
+  "authors": [
+    {
+      "name": "Tom\u00e1\u0161 Voj\u00edk",
+      "email": "vojik@wboy.cz"
+    }
+  ],
+  "archive": {
+    "exclude": [
+      "/vendor",
+      "/composer.lock",
+      "/temp",
+      "/build",
+      "/.phpunit.cache",
+      "/.phpunit.result.cache",
+      "/.php-cs-fixer.cache",
+      "/.idea",
+      "/.vscode",
+      "/.env*",
+      "/**/.DS_Store",
+      "/.DS_Store"
+    ]
+  },
+  "require": {
+    "php": ">=8.4",
+    "ext-gettext": "*",
+    "gettext/languages": "^2.10"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.95",
+    "orchestra/testbench": "^10.0 || ^11.0",
+    "phpstan/phpstan": "^2.0",
+    "phpunit/phpunit": "^12.0 || ^13.0",
+    "gettext/gettext": "^5.7"
+  },
+  "suggest": {
+    "laravel/framework": "^12.0 || ^13.0 for the optional Laravel service provider."
+  },
+  "conflict": {
+    "laravel/framework": "<12.0"
+  },
+  "scripts": {
+    "cs:fix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php",
+    "cbf": "@cs:fix",
+    "cs": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --dry-run --diff",
+    "phpstan": "./vendor/bin/phpstan analyse",
+    "test": "./vendor/bin/phpunit"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lsr\\Translations\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Lsr\\Translations\\Laravel\\TranslationsServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable"
+}
