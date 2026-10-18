@@ -1,5 +1,6 @@
 {
   "name": "lsr/translations",
+  "version": "0.1.0",
   "description": "Framework-neutral native gettext localization runtime with optional Laravel integration.",
   "type": "library",
   "license": "MIT",
